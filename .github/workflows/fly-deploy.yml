@@ -3,20 +3,19 @@ name: Deploy to Fly.io
 on:
   push:
     branches:
-      - main  # change to your default branch if needed
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Set up Fly.io CLI
+      - name: Set up Flyctl
         uses: superfly/flyctl-actions/setup-flyctl@v1
 
       - name: Deploy to Fly.io
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-        run: |
-          flyctl deploy --remote-only
+        run: flyctl deploy --remote-only
+
