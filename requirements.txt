@@ -1,9 +1,16 @@
-fastapi
-"uvicorn[standard]"
-python-multipart
-pytesseract
-pdf2image
-sentence-transformers
-chromadb
-pillow
-numpy
+fastapi==0.109.1
+uvicorn[standard]==0.23.2
+python-multipart==0.0.6
+
+# OCR + PDF processing
+pytesseract==0.3.10
+pdf2image==1.16.3
+Pillow==10.2.0
+numpy==1.26.4
+
+# Embeddings + semantic search
+sentence-transformers==2.2.2
+torch==2.0.1
+
+# Vector database
+chromadb==0.4.22
