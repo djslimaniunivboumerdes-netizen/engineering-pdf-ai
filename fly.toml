@@ -1,21 +1,30 @@
-app = "engineering-pdf-ai"
+# fly.toml file generated for your Fly.io app
 
-primary_region = "cdg"
-
-[build]
-  builder = "heroku/buildpacks:20"
+app = "engineering-pdf-ai"  # <-- your app name here
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
 
 [env]
-  PORT = "8080"
+# Add any environment variables you want here
+# Example:
+# MY_API_KEY = "your_api_key"
+
+[build]
+  # You can define a builder here, for Python FastAPI using Dockerfile:
+  # builder = "heroku/buildpacks:20"
+
+[deploy]
+  release_command = ""
 
 [[services]]
-  internal_port = 8080
+  internal_port = 8000
   protocol = "tcp"
 
   [[services.ports]]
-    port = 80
     handlers = ["http"]
+    port = 80
 
   [[services.ports]]
-    port = 443
     handlers = ["tls", "http"]
+    port = 443
