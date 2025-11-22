@@ -5,7 +5,7 @@ python-multipart==0.0.6
 # OCR + PDF processing
 pytesseract==0.3.10
 pdf2image==1.16.3
-Pillow==10.2.0
+Pillow==9.5.0
 numpy==1.26.4
 
 # Embeddings + semantic search
